@@ -14,12 +14,11 @@ const bands = [
     'An Old Dog'
 ];
 function replaced(article) {
-    return article.replace(/^(a |an |the )/i, '').trim();
+    return article.replace(/^(a |an |the )/i,'').trim();
 }
 const sortedBands = bands.sort((a, b) => replaced(a).localeCompare(replaced(b)));
 const ul = document.getElementById('band');
 sortedBands.forEach(sortBand => {
-    const li = document.createElement('li');
-    li.textContent = sortBand;
-    ul.appendChild(li);
+    const li=`<li>${sortBand}</li>`;
+	ul.innerHTML+=li;
 });
