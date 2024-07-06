@@ -17,7 +17,7 @@ function replaced(article) {
     return article.replace(/^(a |an |the )/i,'').trim();
 }
 const sortedBands = bands.sort((a, b) => replaced(a).localeCompare(replaced(b)));
-const ul = document.getElementById('band');
+const ul = document.getElementById('bands');
 sortedBands.forEach(sortBand => {
     const li=`<li>${sortBand}</li>`;
 	ul.innerHTML+=li;
